@@ -14,13 +14,13 @@ public class Marca {
     @Column(name = " id", nullable = false)
     private Integer id;
     @Column(name = "nombreMarca", nullable = false,length = 30)
-    private String nombreMarca;
+    private String nombreMarca;// no vacio y maximo 50 caracteres con espacios
     @Column(name = "nit", nullable = false,length = 30)
-    private String nit;
+    private String nit;// no vacio solo numeros long max 10
     @Column(name = "anoCreacion", nullable = false)
-    private LocalDate anoCreacion;
+    private LocalDate anoCreacion;// obligatorio
     @Column(name = "sedePrincipal", nullable = false,length = 30)
-    private String sedePrincipal;
+    private String sedePrincipal;// no se valida
 
     public Marca() {
     }

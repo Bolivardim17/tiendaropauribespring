@@ -11,9 +11,9 @@ public class Detalle {
     @Column(name = "id", nullable = false)
     private Integer id;
     @Column(name = "costoTotal", nullable = false)
-    private Integer costoTotal;
+    private Integer costoTotal;// no vacio solo numeros positivos
     @Column(name = "cantidadProductos", nullable = false)
-    private Integer cantidadProductos;
+    private Integer cantidadProductos;// obligatorio solo numeros positivos
 
     public Detalle() {
     }

@@ -10,27 +10,27 @@ public class Usuario {
     private Integer id;
 
     @Column(name = "nombres", nullable = false,length = 50)
-    private String nombres;
+    private String nombres; //no vacio - solo letras y espacios long max 50 caracteres
     @Column(name = "apellidos", nullable = false,length = 50)
-    private String apellidos;
+    private String apellidos;// no validar
     @Column(name = "cedula", nullable = false,length = 20)
-    private String cedula;
+    private String cedula; // solo numeros sin espacios - no vacio long 12
     @Column(name = "correo", nullable = false,length = 50)
-    private String correo;
+    private String correo;// no vacio y formato convencional de correo
     @Column(name = "direccion", nullable = true,length = 50)
-    private String direccion;
+    private String direccion;// no se valida
     @Column(name = "sexo", nullable = true,length = 20)
-    private String sexo;
+    private String sexo;// solo debe contener la palabra (masculino/femenino)
     @Column(name = "medioPago", nullable = false,length = 20)
-    private String medioPago;
+    private String medioPago;//no se valida
     @Column(name = "pais", nullable = false,length = 30)
-    private String pais;
+    private String pais;// no se valida
     @Column(name = "departamento", nullable = true,length = 30)
-    private String departamento;
+    private String departamento;// no se valida
     @Column(name = "municipio", nullable = false,length = 30)
-    private String municipio;
+    private String municipio;// no se valida
     @Column(name = "codigoPostal", nullable = false,length = 30)
-    private String codigoPostal;
+    private String codigoPostal;// no vacio solo numero log de seis
 
     public Usuario() {
     }
