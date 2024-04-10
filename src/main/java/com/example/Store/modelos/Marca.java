@@ -18,14 +18,14 @@ public class Marca {
     @Column(name = "nit", nullable = false,length = 30)
     private String nit;// no vacio solo numeros long max 10
     @Column(name = "anoCreacion", nullable = false)
-    private LocalDate anoCreacion;// obligatorio
+    private String anoCreacion;// obligatorio
     @Column(name = "sedePrincipal", nullable = false,length = 30)
     private String sedePrincipal;// no se valida
 
     public Marca() {
     }
 
-    public Marca(Integer id, String nombreMarca, String nit, LocalDate anoCreacion, String sedePrincipal) {
+    public Marca(Integer id, String nombreMarca, String nit, String anoCreacion, String sedePrincipal) {
         this.id = id;
         this.nombreMarca = nombreMarca;
         this.nit = nit;
@@ -57,11 +57,11 @@ public class Marca {
         this.nit = nit;
     }
 
-    public LocalDate getAnoCreacion() {
+    public String getAnoCreacion() {
         return anoCreacion;
     }
 
-    public void setAnoCreacion(LocalDate anoCreacion) {
+    public void setAnoCreacion(String anoCreacion) {
         this.anoCreacion = anoCreacion;
     }
 

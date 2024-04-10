@@ -32,11 +32,12 @@ public class Marcavalidacion {
         return true;
     }
 
-    public boolean validarAnoCreacion (LocalDate anoCreacion) throws Exception{
+    public boolean validarAnoCreacion (String anoCreacion) throws Exception{
 
         String regex = "^\\d{4}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])$";
 
-        if (anoCreacion null){
+        if (!this.evaluadorDeCoincidencia.evaluarPatron(anoCreacion,regex)){
+            throw  new Exception("fecha de nacimiento no valida, ingrese formato años mes y dia ");
 
         }
         return true;

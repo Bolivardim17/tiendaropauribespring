@@ -12,12 +12,12 @@ public class Pedido {
     @Column(name = "id", nullable = false)
     private Integer id;
     @Column(name = "FechaYHora", nullable = false)
-    private LocalDateTime FechaYHora;// no vacio y formato internacional
+    private String FechaYHora;// no vacio y formato internacional
 
     public Pedido() {
     }
 
-    public Pedido(Integer id, LocalDateTime fechaYHora) {
+    public Pedido(Integer id, String fechaYHora) {
         this.id = id;
         FechaYHora = fechaYHora;
     }
@@ -30,11 +30,11 @@ public class Pedido {
         this.id = id;
     }
 
-    public LocalDateTime getFechaYHora() {
+    public String getFechaYHora() {
         return FechaYHora;
     }
 
-    public void setFechaYHora(LocalDateTime fechaYHora) {
+    public void setFechaYHora(String fechaYHora) {
         FechaYHora = fechaYHora;
     }
 }
