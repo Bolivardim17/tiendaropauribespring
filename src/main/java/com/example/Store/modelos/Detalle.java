@@ -7,9 +7,8 @@ import jakarta.persistence.*;
 public class Detalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @Column(name = "id_detalle", nullable = false)
+    private Integer id_detalle;
     @Column(name = "costoTotal", nullable = false)
     private Integer costoTotal;// no vacio solo numeros positivos
     @Column(name = "cantidadProductos", nullable = false)
@@ -19,17 +18,16 @@ public class Detalle {
     }
 
     public Detalle(Integer id, Integer costoTotal, Integer cantidadProductos) {
-        this.id = id;
+        this.id_detalle = id;
         this.costoTotal = costoTotal;
         this.cantidadProductos = cantidadProductos;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getId() {return id_detalle;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.id_detalle = id;
     }
 
     public Integer getCostoTotal() {

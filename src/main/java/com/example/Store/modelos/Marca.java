@@ -11,8 +11,8 @@ import java.time.LocalDate;
 public class Marca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = " id", nullable = false)
-    private Integer id;
+    @Column(name = " id_marca", nullable = false)
+    private Integer id_marca;
     @Column(name = "nombreMarca", nullable = false,length = 30)
     private String nombreMarca;// no vacio y maximo 50 caracteres con espacios
     @Column(name = "nit", nullable = false,length = 30)
@@ -26,7 +26,7 @@ public class Marca {
     }
 
     public Marca(Integer id, String nombreMarca, String nit, String anoCreacion, String sedePrincipal) {
-        this.id = id;
+        this.id_marca = id;
         this.nombreMarca = nombreMarca;
         this.nit = nit;
         this.anoCreacion = anoCreacion;
@@ -34,11 +34,11 @@ public class Marca {
     }
 
     public Integer getId() {
-        return id;
+        return id_marca;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.id_marca = id;
     }
 
     public String getNombreMarca() {
