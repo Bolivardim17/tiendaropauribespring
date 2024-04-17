@@ -20,19 +20,61 @@ public class UsuarioServicio {
     // En el servicio se crea un metodo para cada una de las consultas a realizar en BD
     // guardar usuario
 
-    public Usuario guardarUsuario(){
-        return null;
+    public Usuario guardarUsuario(Usuario datosUsuario) throws Exception {
+
+        try {
+            if (usuarioValidacion.validarNombres(datosUsuario.getNombres()) == true) {
+                if (usuarioValidacion.validarCedula(datosUsuario.getCedula()) == true) {
+                    if (usuarioValidacion.validarCorreo(datosUsuario.getCorreo()) == true) {
+                        if (usuarioValidacion.validarSexo(datosUsuario.getSexo()) == true) {
+                            if (usuarioValidacion.validaCodigo(datosUsuario.getCodigoPostal())==true){
+
+
+                                return usuarioRepositorio.save(datosUsuario);
+
+                        }
+
+
+                    }
+                }
+            }
+
+        }
+            return null;
+
+
+
+        }catch (Exception error){
+            throw new Exception(error.getMessage());
+
+        }
+
     }
 
     // consultar usuario en bd por id
-    public Usuario buscarUsuarioPorID(){
-        return null;
+    public Usuario buscarUsuarioPorID(Integer idUsuario) throws Exception{
+        try {
+            if (usuarioRepositorio.findById(idUsuario).isPresent()){
+                return usuarioRepositorio.findById(idUsuario).get();
+            }else{
+                throw new Exception("usuario no encontrado");
+            }
+
+        }catch (Exception error){
+
+            throw new Exception(error.getMessage());
+
+        }
     }
 
     //consultar todos los usuarios
 
-    public List<Usuario> buscarTodosUsuarios(){
-        return null;
+    public List<Usuario> buscarTodosUsuarios() throws Exception{
+           try{
+               return usuarioRepositorio.findAll();
+           }catch (Exception error){
+               throw new Exception(error.getMessage());
+           }
     }
 
     // editar un usuario

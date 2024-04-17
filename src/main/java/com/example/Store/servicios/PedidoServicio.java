@@ -17,14 +17,35 @@ public class PedidoServicio {
 
     // En el servicio se crea un metodo para cada una de las consultas a realizar en BD
     // guardar usuario
+    public Pedido guardarPedido (Pedido datosPedidos) throws  Exception{
+        try {
+            if (!pedidovalidacion.validarFechaYHora(datosPedidos.getFechaYHora())){
+                throw new Exception("fecha no valida, verifique el el formato");
+            }
+
+            return pedidoRepositorio.save(datosPedidos);
+
+        }catch (Exception error){
+            throw new Exception(error.getMessage());
+        }
+    }
 
     public Pedido guardarPedido(){
         return null;
     }
 
     // consultar usuario en bd por id
-    public Pedido buscarPedidoPorId(){
-        return null;
+    public Pedido buscarPedidoPorId(Integer idPedido) throws Exception {
+        try {
+            if (pedidoRepositorio.findById(idPedido).isPresent()){
+                return pedidoRepositorio.findById(idPedido).get();
+            }else{
+                throw new Exception("pedido no encontrado, verifique su id");
+            }
+
+        }catch (Exception error){
+            throw new Exception(error.getMessage());
+        }
     }
 
     //consultar todos los usuarios

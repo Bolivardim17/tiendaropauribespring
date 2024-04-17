@@ -18,13 +18,38 @@ public class TipoPrendaServicio {
     // En el servicio se crea un metodo para cada una de las consultas a realizar en BD
     // guardar usuario
 
+    public TipoPrenda guardarTipoPrenda (TipoPrenda datosTipoPrenda) throws Exception{
+
+        try{
+            if (tipoproductoValidacion.validarNombre(datosTipoPrenda.getNombre())==true){
+
+                return tipoPrendaRepositorio.save(datosTipoPrenda);
+
+            }
+            return null;
+
+        }catch (Exception error){
+            throw new Exception(error.getMessage());
+        }
+
+    }
+
     public TipoPrenda guardarTipoPrenda(){
-        return null;
+       return null;
     }
 
     // consultar usuario en bd por id
-    public TipoPrenda buscarTipoPrendaPorId(){
-        return null;
+    public TipoPrenda buscarTipoPrendaPorId(Integer idPrenda)throws Exception {
+        try {
+            if (tipoPrendaRepositorio.findById(idPrenda).isPresent()){
+                return tipoPrendaRepositorio.findById(idPrenda).get();
+            }else{
+                throw new Exception("prenda no encontrada, verifique por favor");
+            }
+
+        }catch (Exception error){
+            throw new Exception(error.getMessage());
+        }
     }
 
     //consultar todos los usuarios
