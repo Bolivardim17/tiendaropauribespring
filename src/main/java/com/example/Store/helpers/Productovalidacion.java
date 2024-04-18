@@ -1,5 +1,9 @@
 package com.example.Store.helpers;
 
+import org.springframework.stereotype.Component;
+
+@Component
+
 public class Productovalidacion {
 
     private EvaluarPatron evaluadorDeCoincidencias = new EvaluarPatron();

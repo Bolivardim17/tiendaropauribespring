@@ -1,8 +1,7 @@
 package com.example.Store.servicios;
 
-import com.example.Store.helpers.TipoproductoValidacion;
+import com.example.Store.helpers.TipoPrendaValidacion;
 import com.example.Store.modelos.TipoPrenda;
-import com.example.Store.modelos.Usuario;
 import com.example.Store.repositorios.TipoPrendaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,7 +10,7 @@ import java.util.List;
 public class TipoPrendaServicio {
 
     @Autowired
-    TipoproductoValidacion tipoproductoValidacion;
+    TipoPrendaValidacion tipoproductoValidacion;
     @Autowired
     TipoPrendaRepositorio tipoPrendaRepositorio;
 
